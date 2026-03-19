@@ -33,19 +33,76 @@ const timeFont = Azeret_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aatreya - Full Stack Developer",
+  metadataBase: new URL("https://sabinpaudel.com.np"),
+  title: {
+    default: "Aatreya | Sabin Paudel - Full Stack Developer Portfolio",
+    template: "%s | Aatreya Portfolio",
+  },
   description:
-    "Portfolio of a passionate developer building modern web experiences",
-  keywords: ["Next.js", "React", "TypeScript", "Full Stack Developer"],
-  authors: [{ name: "Sabin Paudel" }],
+    "Portfolio of Sabin Paudel, a full stack developer in Nepal building fast, modern, SEO-friendly web apps with Next.js, React, TypeScript, Node.js, and MongoDB.",
+  applicationName: "Aatreya Portfolio",
+  authors: [{ name: "Sabin Paudel", url: "https://sabinpaudel.com.np" }],
+  creator: "Sabin Paudel",
+  publisher: "Sabin Paudel",
+  category: "technology",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Sabin Paudel",
+    "Aatreya",
+    "full stack developer",
+    "full stack developer portfolio",
+    "web developer Nepal",
+    "frontend developer",
+    "backend developer",
+    "Next.js developer",
+    "React developer",
+    "TypeScript developer",
+    "Node.js developer",
+    "MongoDB developer",
+    "JavaScript developer",
+    "portfolio website",
+    "software engineer portfolio",
+    "SEO friendly web development",
+    "modern web apps",
+    "Pokhara developer",
+    "hire web developer",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/picofme.png", type: "image/png", sizes: "32x32" },
+      { url: "/picofme.png", type: "image/png", sizes: "192x192" },
+    ],
+    shortcut: ["/picofme.png"],
+    apple: [{ url: "/picofme.png", sizes: "180x180", type: "image/png" }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sabinpaudel.com.np",
-    title: "Aatreya - Full Stack Developer",
+    url: "/",
+    title: "Aatreya | Sabin Paudel - Full Stack Developer Portfolio",
     description:
-      "Portfolio of a passionate developer building modern web experiences",
+      "Explore projects, skills, and experience of Sabin Paudel, a full stack developer building high-performance digital products.",
     siteName: "Aatreya Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aatreya | Sabin Paudel - Full Stack Developer Portfolio",
+    description:
+      "Full stack developer portfolio featuring modern web projects, technical skills, and contact details.",
   },
 };
 
@@ -57,7 +114,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  await sleep(2000); // Simulate loading for 3 seconds
+  await sleep(2000);
   return (
     <html
       lang="en"
