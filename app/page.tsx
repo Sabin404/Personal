@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:mt-7  ">
+      <section className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:mt-4  ">
         <a
           href="#games"
           className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
