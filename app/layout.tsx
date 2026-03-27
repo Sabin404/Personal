@@ -10,6 +10,7 @@ import ProgressBar from "@/app/components/ui/ProgressBar";
 import { cn } from "@/app/lib/utils/cn";
 import BubbleLoader from "./loading";
 import { LanguageProvider } from "@/app/lib/i18n/LanguageProvider";
+import Script from "next/script";
 
 const nepaliFont = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
@@ -133,29 +134,24 @@ export default async function RootLayout({
           <div aria-hidden="true" className="lamp-shell" />
           <div aria-hidden="true" className="lamp-beam" />
           <MouseGlow />
-          {/* <CursorFollower /> */}
-          {/* Base dark background */}
-          {/* <div className="fixed inset-0 -z-50 bg-[#0a0a0a]" /> */}
-          {/* Soft radial spotlight */}
-          {/* <div className="fixed inset-0 -z-40 pointer-events-none">
-            <div className="absolute top-[-20%] left-[10%] w-[600px] h-[600px] bg-purple-600/20 blur-[180px] rounded-full" />
-            <div className="absolute bottom-[-20%] right-[10%] w-[600px] h-[600px] bg-blue-600/20 blur-[180px] rounded-full" />
-          </div> */}
-          {/* Animated subtle gradient overlay */}
+
           <div className="fixed inset-0 -z-30 opacity-40">
             <div className="absolute inset-0 bg-linear-to-r from-purple-500/10 via-blue-500/10 to-indigo-500/10 blur-3xl animate-gradient" />
           </div>
-          {/* Cursor */}
-          {/* <CursorFollower /> */}
-          {/* Top system bar */}
+
           <SystemBar />
-          {/* Scroll progress */}
+
           <ProgressBar />
-          {/* Navigation */}
+
           <Navigation />
-          {/* Main content */}
+
           <main className="pt-24 relative z-10">{children}</main>
         </LanguageProvider>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="58e33305-1dd3-49a3-81a4-bc7be9f7a634"
+        ></Script>
       </body>
     </html>
   );
