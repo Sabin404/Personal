@@ -128,6 +128,12 @@ export default async function RootLayout({
         GeistSans.className,
       )}
     >
+      <head>
+        <meta
+          name="google-site-verification"
+          content="E3nFzfLYn6siE0KzcOArfuiHbQsrY84dnWoNE7YmDMk"
+        />
+      </head>
       <body className="antialiased app-bg text-foreground overflow-x-hidden transition-colors duration-300">
         <LanguageProvider>
           <BubbleLoader />
