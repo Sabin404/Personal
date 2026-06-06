@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 import { useLanguage } from "@/app/lib/i18n/LanguageProvider";
+import StatBadge from "@/app/components/ui/StatBadge";
 
 type GameState = "idle" | "playing" | "finished";
 
@@ -128,11 +129,11 @@ export default function HomeArcadeGame() {
             <p className="text-sm text-zinc-400">{t.games.arcade.subtitle}</p>
           </div>
           <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-300">
-            <Stat label={t.games.arcade.level} value={String(level)} />
-            <Stat label={t.games.arcade.score} value={String(score)} />
-            <Stat label={t.games.arcade.best} value={String(bestScore)} />
-            <Stat label={t.games.arcade.accuracy} value={`${accuracy}%`} />
-            <Stat label={t.games.arcade.time} value={`${timeLeft}s`} />
+            <StatBadge label={t.games.arcade.level} value={String(level)} />
+            <StatBadge label={t.games.arcade.score} value={String(score)} />
+            <StatBadge label={t.games.arcade.best} value={String(bestScore)} />
+            <StatBadge label={t.games.arcade.accuracy} value={`${accuracy}%`} />
+            <StatBadge label={t.games.arcade.time} value={`${timeLeft}s`} />
           </div>
         </div>
 
@@ -174,14 +175,6 @@ export default function HomeArcadeGame() {
           )}
         </div>
       </div>
-    </div>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5">
-      <span className="text-zinc-400">{label}:</span> <span>{value}</span>
     </div>
   );
 }

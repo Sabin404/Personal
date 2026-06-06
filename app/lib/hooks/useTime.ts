@@ -7,7 +7,6 @@ export function useTime(formatString: string = 'hh:mm:ss') {
 
   useEffect(() => {
     // Set initial time
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTime(format(new Date(), formatString))
 
     // Update every second

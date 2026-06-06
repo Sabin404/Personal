@@ -21,7 +21,7 @@ export default function SystemBar() {
         className="pointer-events-auto absolute left-0"
       >
         <div className="flex max-w-[72vw] items-center gap-2 rounded-r-full border border-l-0 border-white/15 bg-black/55 px-2.5 py-1.5 backdrop-blur-md sm:max-w-none sm:px-3 sm:py-2">
-          <MapPin className="h-3.5 w-3.5 text-zinc-300" />
+          <MapPin className="h-3.5 w-3.5 text-white" />
           <div
             className="leading-tight"
             style={{
@@ -29,10 +29,10 @@ export default function SystemBar() {
                 "var(--font-location), var(--font-nepali), var(--font-geist-sans), sans-serif",
             }}
           >
-            <div className="max-w-[48vw] truncate text-[11px] text-zinc-200 sm:max-w-none sm:text-xs">
+            <div className="max-w-[48vw] truncate text-[11px] text-white sm:max-w-none sm:text-xs">
               {city}, {country}
             </div>
-            <div className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+            <div className="text-[10px] uppercase tracking-[0.16em] text-white">
               {LOCATION.flag} {t.systemBar.liveLocation}
             </div>
           </div>
@@ -52,14 +52,14 @@ export default function SystemBar() {
               fontFamily: "var(--font-time), var(--font-geist-mono), monospace",
             }}
           >
-            <div className="text-xs tabular-nums tracking-widest text-zinc-100 sm:text-base sm:tracking-[0.14em]">
+            <div className="text-xs tabular-nums tracking-widest text-white sm:text-base sm:tracking-[0.14em]">
               {time}
             </div>
-            <div className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+            <div className="text-[10px] uppercase tracking-[0.16em] text-white">
               {t.systemBar.localTime}
             </div>
           </div>
-          <Clock className="h-3.5 w-3.5 text-zinc-300" />
+          <Clock className="h-3.5 w-3.5 text-white" />
         </div>
       </motion.div>
     </div>

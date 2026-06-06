@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/app/lib/i18n/LanguageProvider";
+import StatBadge from "@/app/components/ui/StatBadge";
 
 const luckyNumbers = [3, 7, 9, 12, 17, 21, 28, 33, 42];
 
@@ -110,21 +111,25 @@ export default function HomeFunAstrologyGame() {
             </p>
 
             <div className="mt-4 grid gap-2 text-xs text-zinc-200 sm:grid-cols-2">
-              <Stat
+              <StatBadge
                 label={t.games.astrology.luckyColor}
                 value={prediction.color}
+                variant="compact"
               />
-              <Stat
+              <StatBadge
                 label={t.games.astrology.luckyNumber}
                 value={String(prediction.number)}
+                variant="compact"
               />
-              <Stat
+              <StatBadge
                 label={t.games.astrology.dailyVibe}
                 value={prediction.mood}
+                variant="compact"
               />
-              <Stat
+              <StatBadge
                 label={t.games.astrology.cosmicEnergy}
                 value={`${prediction.energy}%`}
+                variant="compact"
               />
             </div>
           </div>
@@ -134,11 +139,4 @@ export default function HomeFunAstrologyGame() {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
-      <span className="text-zinc-400">{label}: </span>
-      <span className="font-medium text-white">{value}</span>
-    </div>
-  );
-}
+

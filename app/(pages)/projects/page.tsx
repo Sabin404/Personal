@@ -2,21 +2,11 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { getProjects } from "@/app/types/project";
+import type { Project } from "@/app/types";
 import { ArrowUpRight, Github, Star } from "lucide-react";
 import OptimizedImage from "@/app/components/ui/OptimizedImage";
 import Link from "next/link";
 import { useLanguage } from "@/app/lib/i18n/LanguageProvider";
-
-// Define project type
-interface Project {
-  liveUrl?: string;
-  id: string;
-  title: string;
-  description: string;
-  image?: string;
-  tech?: string[];
-  url?: string;
-}
 
 export default function Projects() {
   const { language, t } = useLanguage();
@@ -120,7 +110,7 @@ function Header({
       <motion.div className="mb-6 flex items-center justify-center gap-3 sm:mb-8">
         <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full">
           <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-          <span className="text-sm text-white/80 font-medium tracking-wide">
+          <span className="text-sm text-white font-medium tracking-wide">
             {selectedWorks}
           </span>
         </div>
@@ -132,7 +122,7 @@ function Header({
           {headingHighlight}
         </span>
       </h1>
-      <motion.p className="mx-auto mt-6 max-w-2xl px-1 text-base font-light tracking-wide text-white/50 sm:mt-8 sm:text-xl">
+      <motion.p className="mx-auto mt-6 max-w-2xl px-1 text-base font-light tracking-wide text-white sm:mt-8 sm:text-xl">
         {subtitle}
       </motion.p>
     </motion.div>
@@ -171,7 +161,7 @@ function CTA({
         <ArrowUpRight size={20} />
       </motion.a>
 
-      <motion.p className="mt-4 text-white/40 text-sm uppercase tracking-widest">
+      <motion.p className="mt-4 text-white text-sm uppercase tracking-widest">
         {projectsCount}+ {projectsAndCounting}
       </motion.p>
     </motion.div>
@@ -230,14 +220,14 @@ function ProjectCard({ project }: { project: Project }) {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col justify-between p-5 text-white sm:p-6 lg:p-8">
         <div>
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-xs text-white/60 mb-6">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-xs text-white mb-6">
             <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
             {t.projects.liveProject}
           </span>
           <h3 className="mb-3 text-2xl font-bold sm:mb-4 sm:text-3xl lg:text-4xl">
             {project.title}
           </h3>
-          <p className="max-w-xl text-sm leading-relaxed text-white/70 sm:text-base lg:text-lg">
+          <p className="max-w-xl text-sm leading-relaxed text-white sm:text-base lg:text-lg">
             {project.description}
           </p>
         </div>
@@ -245,16 +235,16 @@ function ProjectCard({ project }: { project: Project }) {
         {/* Tech & CTA */}
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {project.tech?.slice(0, 4).map((tech, i) => (
+            {project.tags?.slice(0, 4).map((tag, i) => (
               <span
                 key={i}
-                className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white/80 font-medium"
+                className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-white font-medium"
               >
-                {tech}
+                {tag}
               </span>
             ))}
           </div>
-          <div className="flex items-center gap-3 text-white/80 hover:text-white transition-colors cursor-pointer">
+          <div className="flex items-center gap-3 text-white hover:text-white transition-colors cursor-pointer">
             {project.liveUrl ? (
               <Link
                 href={project.liveUrl}

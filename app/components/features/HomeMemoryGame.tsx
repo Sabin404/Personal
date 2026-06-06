@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import confetti from "canvas-confetti";
 import { useLanguage } from "@/app/lib/i18n/LanguageProvider";
+import StatBadge from "@/app/components/ui/StatBadge";
 
 type PlayState = "idle" | "show" | "input" | "failed";
 
@@ -110,9 +111,9 @@ export default function HomeMemoryGame() {
           </div>
 
           <div className="flex items-center gap-2 text-xs text-zinc-300">
-            <Stat label={t.games.memory.level} value={String(level)} />
-            <Stat label={t.games.memory.best} value={String(bestLevel)} />
-            <Stat
+            <StatBadge label={t.games.memory.level} value={String(level)} />
+            <StatBadge label={t.games.memory.best} value={String(bestLevel)} />
+            <StatBadge
               label={t.games.memory.progress}
               value={`${Math.min(inputIndex, sequence.length)}/${sequence.length || 0}`}
             />
@@ -166,10 +167,4 @@ export default function HomeMemoryGame() {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5">
-      <span className="text-zinc-400">{label}:</span> <span>{value}</span>
-    </div>
-  );
-}
+

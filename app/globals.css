@@ -96,6 +96,7 @@
 }
 body {
   background: var(--color-background);
+  cursor: progress;
 }
 
 html[lang="ne"] body {

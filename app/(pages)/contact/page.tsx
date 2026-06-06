@@ -132,7 +132,7 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mx-auto max-w-2xl px-1 text-base font-light text-white/50 sm:text-lg lg:text-xl"
+            className="mx-auto max-w-2xl px-1 text-base font-light text-white sm:text-lg lg:text-xl"
           >
             {t.contact.introLine1} ☕
             <br />
@@ -168,7 +168,7 @@ export default function Contact() {
                   <h3 className="mb-4 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
                     {t.contact.dropLineTitle}
                   </h3>
-                  <p className="mb-6 text-base text-white/60 sm:text-lg">
+                  <p className="mb-6 text-base text-white sm:text-lg">
                     {t.contact.dropLineDesc}
                   </p>
                 </div>
@@ -215,14 +215,14 @@ export default function Contact() {
                     {t.contact.basedIn}
                   </h3>
                   <div className="space-y-3">
-                    <p className="text-white/60 text-base leading-relaxed">
+                    <p className="text-white text-base leading-relaxed">
                       {t.contact.basedInDesc}
                     </p>
                     <div className="flex items-center gap-2">
                       <span className="text-4xl">{LOCATION.flag}</span>
                       <div>
                         <p className="font-bold text-white text-lg">{city}</p>
-                        <p className="text-white/50 text-sm">{country}</p>
+                        <p className="text-white text-sm">{country}</p>
                       </div>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export default function Contact() {
                 {/* Timezone indicator */}
                 <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-xl border border-white/10">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-xs text-white/60 font-mono">
+                    <span className="text-xs text-white font-mono">
                     {t.contact.timezoneText}
                   </span>
                 </div>
@@ -277,8 +277,8 @@ export default function Contact() {
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition-all hover:border-white/30 hover:bg-white/10 sm:gap-3 sm:px-6 sm:py-4"
                   >
-                    <Icon className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
-                    <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
+                    <Icon className="w-5 h-5 text-white group-hover:text-white transition-colors" />
+                    <span className="text-sm font-medium text-white group-hover:text-white transition-colors">
                       {social.name}
                     </span>
                   </motion.a>
@@ -299,7 +299,7 @@ export default function Contact() {
             <h3 className="text-3xl font-bold text-white mb-2">
               {t.contact.otherWaysTitle}
             </h3>
-            <p className="text-white/50">{t.contact.otherWaysDesc} 😄</p>
+            <p className="text-white">{t.contact.otherWaysDesc} 😄</p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
@@ -403,7 +403,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-14 text-center sm:mt-20"
         >
-          <p className="text-white/30 text-sm tracking-widest uppercase mb-4">
+          <p className="text-white text-sm tracking-widest uppercase mb-4">
             {t.contact.responseTime}
           </p>
           <motion.p
@@ -414,7 +414,7 @@ export default function Contact() {
               duration: 3,
               repeat: Infinity,
             }}
-            className="text-white/50 font-mono text-xs"
+            className="text-white font-mono text-xs"
           >
             {`✨ ${t.contact.poweredBy} ✨`}
           </motion.p>

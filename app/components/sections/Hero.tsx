@@ -33,7 +33,7 @@ export default function Hero() {
           {t.hero.headingLine1}
 
           <motion.span
-            className="inline-block bg-linear-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent"
+            className="inline-block text-white bg-clip-text "
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="mx-auto mt-2 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg md:text-xl"
+          className="mx-auto mt-2 max-w-2xl text-base leading-relaxed text-white sm:text-lg md:text-xl"
         >
           {t.hero.intro}
         </motion.p>
@@ -191,10 +191,10 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 12, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="lg:flex flex-col items-center  text-zinc-500 hidden "
+          className="lg:flex flex-col items-center  text-white hidden "
         >
           <span className="text-[14px] mb-2 font-mono">Dont scroll</span>
-          <ArrowDown size={18} className="text-zinc-500 text-center" />
+          <ArrowDown size={18} className="text-white text-center" />
         </motion.div>
       </motion.div> */}
     </section>

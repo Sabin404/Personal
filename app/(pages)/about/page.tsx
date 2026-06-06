@@ -133,7 +133,7 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-zinc-400 mt-2 text-base"
+              className="text-white mt-2 text-base"
             >
               {profile.role}
             </motion.p>
@@ -143,7 +143,7 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="flex items-center justify-center gap-2 mt-4 text-sm text-zinc-500"
+              className="flex items-center justify-center gap-2 mt-4 text-sm text-white"
             >
               <MapPin size={16} />
               <span>{profile.location}</span>
@@ -181,7 +181,7 @@ export default function About() {
                       <span className="font-normal text-base">{link.name}</span>
                       <Icon
                         size={20}
-                        className="text-zinc-500 group-hover:text-white transition-colors"
+                        className="text-white group-hover:text-white transition-colors"
                       />
                     </div>
                   </motion.a>
@@ -211,7 +211,7 @@ export default function About() {
             </motion.div>
             <motion.p
               variants={itemVariants}
-              className="max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
+              className="max-w-2xl text-base leading-relaxed text-white sm:text-lg"
             >
               {introduction}
             </motion.p>
@@ -247,14 +247,14 @@ export default function About() {
                   <div className="bg-zinc-900/30 border border-white/5 rounded-xl p-6 hover:border-white/20 transition-all">
                     <h4 className="flex items-center gap-2 text-lg font-semibold sm:text-xl">
                       <span className="text-blue-400">{job.title}</span>
-                      <span className="text-zinc-600">—</span>
+                      <span className="text-white">—</span>
                       <span>{job.company}</span>
                     </h4>
-                    <p className="text-sm text-zinc-500 mt-1 flex items-center gap-2">
+                    <p className="text-sm text-white mt-1 flex items-center gap-2">
                       <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                       {job.period}
                     </p>
-                    <p className="text-zinc-400 mt-4 leading-relaxed">
+                    <p className="text-white mt-4 leading-relaxed">
                       {job.description}
                     </p>
                   </div>
@@ -292,9 +292,9 @@ export default function About() {
                       <h4 className="font-semibold text-lg text-purple-400">
                         {item.title}
                       </h4>
-                      <p className="text-zinc-300 mt-1">{item.school}</p>
+                      <p className="text-white mt-1">{item.school}</p>
                     </div>
-                    <span className="text-sm text-zinc-500 bg-zinc-800 px-3 py-1 rounded-full">
+                    <span className="text-sm text-white bg-zinc-800 px-3 py-1 rounded-full">
                       {item.info}
                     </span>
                   </div>
@@ -331,7 +331,7 @@ export default function About() {
                       initial={{ opacity: 0, y: -10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className="text-lg md:text-xl font-semibold mb-6 uppercase text-zinc-300 tracking-wide text-left"
+                      className="text-lg md:text-xl font-semibold mb-6 uppercase text-white tracking-wide text-left"
                     >
                       {category}
                     </motion.h4>
@@ -367,7 +367,7 @@ export default function About() {
                             >
                               <Icon size={32} />
                             </motion.div>
-                            <span className="text-zinc-100 font-medium text-sm md:text-base">
+                            <span className="text-white font-medium text-sm md:text-base">
                               {skill}
                             </span>
                           </motion.div>

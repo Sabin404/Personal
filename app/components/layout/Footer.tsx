@@ -47,7 +47,7 @@ export default function Footer() {
             >
               Aatreya Sabin
             </motion.button>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="mt-2 text-sm text-white">
               Building digital experiences with code and creativity.
             </p>
           </div>
@@ -55,12 +55,12 @@ export default function Footer() {
           {/* Middle: Quick Links */}
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-white">
               {["Home", "Projects", "About", "Contact"].map((link) => (
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className="hover:text-foreground transition-colors"
+                    className="hover:text-white transition-colors"
                   >
                     {link}
                   </a>
@@ -85,7 +85,7 @@ export default function Footer() {
                       aria-label={social.name}
                       title={social.tooltip}
                     >
-                      <Icon className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                      <Icon className="h-5 w-5 text-white group-hover:text-white transition-colors" />
                     </a>
                   </MagneticWrapper>
                 );
@@ -96,11 +96,11 @@ export default function Footer() {
 
         {/* Bottom: Copyright with fun text */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-white">
             © {currentYear} Aatreya Sabin. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-white">
             <span>Made with</span>
             <Coffee className="h-4 w-4 inline" />
             <span>and</span>
@@ -114,7 +114,7 @@ export default function Footer() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xs text-center mt-4 text-muted-foreground font-mono"
+            className="text-xs text-center mt-4 text-white font-mono"
           >
             {clicks}/5 clicks... keep going 👀
           </motion.p>

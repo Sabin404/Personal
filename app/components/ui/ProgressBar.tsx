@@ -48,13 +48,6 @@ export default function ProgressBar() {
           }}
         />
       </motion.div>
-
-      {/* Scroll percentage - simple text */}
-      {/* <motion.div className="   top-16 z-50" style={{ opacity }}>
-        <div className="text-base font-medium text-white/80">
-          <ScrollPercentage />
-        </div>
-      </motion.div> */}
     </>
   );
 }

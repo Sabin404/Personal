@@ -27,7 +27,6 @@ export default function BubbleLoader() {
     return () => clearTimeout(timer);
   }, []);
 
-  //for audio, you can use the Web Audio API to create a simple sound effect that plays during the loading animation. Here's how you can implement it:
   useEffect(() => {
     if (loading) {
       const audio = new Audio("./thunder.mp3");
@@ -41,7 +40,7 @@ export default function BubbleLoader() {
 
   const bubbles = BUBBLE_CONFIGS;
 
-  const newLocal = "mt-10 h-0.5 bg-white/10 overflow-hidden";
+  const loadingProgressBarClass = "mt-10 h-0.5 bg-white/10 overflow-hidden";
   return (
     <AnimatePresence>
       {loading && (
@@ -291,7 +290,7 @@ export default function BubbleLoader() {
             </p>
 
             <motion.div
-              className={newLocal}
+              className={loadingProgressBarClass}
               style={{ width: "200px", marginInline: "auto" }}
             >
               <motion.div
