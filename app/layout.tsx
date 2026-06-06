@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { GeistMono, GeistSans } from "geist/font";
 import { Azeret_Mono, Noto_Sans_Devanagari, Syne } from "next/font/google";
+import Script from "next/script";
+
 import "./globals.css";
 import SystemBar from "@/app/components/layout/SystemBar";
 import Navigation from "@/app/components/layout/Navigation";
 import MouseGlow from "@/app/components/layout/MouseGlow";
 import ProgressBar from "@/app/components/ui/ProgressBar";
-import { cn } from "@/app/lib/utils/cn";
 import BubbleLoader from "./loading";
 import { LanguageProvider } from "@/app/lib/i18n/LanguageProvider";
-import Script from "next/script";
+import { cn } from "@/app/lib/utils/cn";
 
 const nepaliFont = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
@@ -35,42 +35,47 @@ const timeFont = Azeret_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sabinpaudel.com.np"),
+
   title: {
-    default: "Aatreya | Sabin Paudel - Full Stack Developer Portfolio",
-    template: "%s | Aatreya Portfolio",
+    default: "Sabin Paudel | Frontend Developer",
+    template: "%s | Sabin Paudel",
   },
+
   description:
-    "Portfolio of Sabin Paudel, a full stack developer in Nepal building fast, modern, SEO-friendly web apps with Next.js, React, TypeScript, Node.js, and MongoDB.",
-  applicationName: "Aatreya Portfolio",
+    "Sabin Paudel is a Frontend Developer from Nepal specializing in React, Next.js, TypeScript, Tailwind CSS, and modern web application development.",
+
+  applicationName: "Sabin Paudel Portfolio",
   authors: [{ name: "Sabin Paudel", url: "https://sabinpaudel.com.np" }],
   creator: "Sabin Paudel",
   publisher: "Sabin Paudel",
   category: "technology",
   referrer: "origin-when-cross-origin",
+
   keywords: [
     "Sabin Paudel",
-    "Aatreya",
-    "full stack developer",
-    "full stack developer portfolio",
-    "web developer Nepal",
-    "frontend developer",
-    "backend developer",
-    "Next.js developer",
-    "React developer",
-    "TypeScript developer",
-    "Node.js developer",
-    "MongoDB developer",
-    "JavaScript developer",
-    "portfolio website",
-    "software engineer portfolio",
-    "SEO friendly web development",
-    "modern web apps",
-    "Pokhara developer",
-    "hire web developer",
+    "Sabin Paudel portfolio",
+    "Sabin Paudel frontend developer",
+    "Frontend Developer Nepal",
+    "Frontend Developer Pokhara",
+    "React Developer Nepal",
+    "Next.js Developer Nepal",
+    "TypeScript Developer",
+    "JavaScript Developer",
+    "Tailwind CSS Developer",
+    "Web Developer Nepal",
+    "Portfolio Website",
+    "Modern Web Applications",
+    "SEO Friendly Web Development",
   ],
+
+  verification: {
+    google: "E3nFzfLYn6siE0KzcOArfuiHbQsrY84dnWoNE7YmDMk",
+  },
+
   alternates: {
     canonical: "/",
   },
+
   icons: {
     icon: [
       { url: "/picofme.png", type: "image/png", sizes: "32x32" },
@@ -79,6 +84,7 @@ export const metadata: Metadata = {
     shortcut: ["/picofme.png"],
     apple: [{ url: "/picofme.png", sizes: "180x180", type: "image/png" }],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -90,32 +96,39 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Aatreya | Sabin Paudel - Full Stack Developer Portfolio",
+    title: "Sabin Paudel | Frontend Developer",
     description:
-      "Explore projects, skills, and experience of Sabin Paudel, a full stack developer building high-performance digital products.",
-    siteName: "Aatreya Portfolio",
+      "Explore the portfolio, projects, and skills of Sabin Paudel, a Frontend Developer from Nepal building modern web applications with React, Next.js, and TypeScript.",
+    siteName: "Sabin Paudel Portfolio",
+    images: [
+      {
+        url: "/picofme.png",
+        width: 1200,
+        height: 630,
+        alt: "Sabin Paudel - Frontend Developer",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Aatreya | Sabin Paudel - Full Stack Developer Portfolio",
+    title: "Sabin Paudel | Frontend Developer",
     description:
-      "Full stack developer portfolio featuring modern web projects, technical skills, and contact details.",
+      "Frontend Developer from Nepal specializing in React, Next.js, TypeScript, and modern web application development.",
+    images: ["/picofme.png"],
   },
 };
 
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  await sleep(2000);
   return (
     <html
       lang="en"
@@ -128,17 +141,13 @@ export default async function RootLayout({
         GeistSans.className,
       )}
     >
-      <head>
-        <meta
-          name="google-site-verification"
-          content="E3nFzfLYn6siE0KzcOArfuiHbQsrY84dnWoNE7YmDMk"
-        />
-      </head>
       <body className="antialiased app-bg text-foreground overflow-x-hidden transition-colors duration-300">
         <LanguageProvider>
           <BubbleLoader />
+
           <div aria-hidden="true" className="lamp-shell" />
           <div aria-hidden="true" className="lamp-beam" />
+
           <MouseGlow />
 
           <div className="fixed inset-0 -z-30 opacity-40">
@@ -146,18 +155,17 @@ export default async function RootLayout({
           </div>
 
           <SystemBar />
-
           <ProgressBar />
-
           <Navigation />
 
           <main className="pt-24 relative z-10">{children}</main>
         </LanguageProvider>
+
         <Script
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="58e33305-1dd3-49a3-81a4-bc7be9f7a634"
-        ></Script>
+        />
       </body>
     </html>
   );
